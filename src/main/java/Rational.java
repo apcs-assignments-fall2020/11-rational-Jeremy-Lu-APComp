@@ -43,6 +43,19 @@ public class Rational
 
         return gcd;
     }
+    public static int lcm(int a, int b){
+        int lcm = 1;
+
+        int k = Math.min(a, b);
+        
+        for(int i = 1; i <= k; i ++){
+            if (a%i == 0 && b%i == 0){
+                lcm = i;
+            }
+        }
+
+        return lcm;
+    }
 
     // This method is given a rational, and returns a simplified version
     // of the input rational
@@ -50,28 +63,47 @@ public class Rational
     //      simplify(1/2) => 1/2
     public static Rational simplify(Rational r)
     {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int gcf = greatestCommonFactor(r.numerator, r.denominator);
+        int new_num = r.numerator/gcf;
+        int new_denom = r.denominator/gcf;
+        Rational x = new Rational(new_num, new_denom);
+        return x;
     }
 
     // This method takes two Rationals, subtracts thems up, 
     // and returns a Rational equal to the difference
     public static Rational subtract(Rational r, Rational s)
     {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int l_c = lcm(s.denominator, r.denominator);
+        int min_dem = Math.min(r.denominator, s.denominator);
+        int new_num = 0;
+        int new_dem = 0;
+        if(min_dem == r.denominator){
+            new_num = r.numerator * l_c;
+            new_dem = r.numerator * l_c;
+        }
+        if(min_dem == s.denominator){
+            new_num = s.numerator * l_c;
+            new_dem = s.numerator * l_c;
+        }
+        Rational x = new Rational(new_num, new_dem);
+        return x;
     }
     
     public static Rational multiply(Rational r, Rational s)
     {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int new_num = r.numerator * s.numerator;
+        int new_dem = r.denominator * s.denominator;
+        Rational x = new Rational(new_num, new_dem);
+        return x;
     }
     
     public static Rational divide(Rational r, Rational s)
     {
-        // REPLACE WITH YOUR CODE HERE
-        return null;
+        int new_num = r.numerator * s.denominator;
+        int new_dem = r.denominator * s.numerator;
+        Rational x = new Rational(new_num, new_dem);
+        return x;
     }
 
 
