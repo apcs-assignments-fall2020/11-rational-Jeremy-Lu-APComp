@@ -106,7 +106,32 @@ public class Rational
         return x;
     }
 
+    public boolean isNegative()
+    {
+        double result = (double) this.numerator/this.denominator;
+        if(result < 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 
+    public boolean equals(Rational r){
+        Rational result_r = Rational.simplify(r);
+        Rational result_this = Rational.simplify(this);
+        if(result_r.numerator == result_this.numerator && result_r.denominator == result_this.denominator){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public Rational reciprocal(){
+        Rational recip = new Rational(this.denominator, this.numerator);
+        return recip;
+    }
 
     // These following methods are NOT static, we'll talk about them next class!
     // This returns a string representation of a Rational (e.g. "1/2")
@@ -134,6 +159,7 @@ public class Rational
         // REPLACE WITH YOUR CODE HERE
         return null;
     }
+    
     
     public Rational divide(Rational s)
     {
