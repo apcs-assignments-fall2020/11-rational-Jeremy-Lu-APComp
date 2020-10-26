@@ -26,7 +26,7 @@ public class Rational
         int newDenominator = r.denominator*s.denominator; 
         
         Rational x = new Rational(newNumerator, newDenominator);
-        return x;
+        return Rational.simplify(x);
     }
 
     // Finds the greatest common factor between a and b
@@ -87,7 +87,7 @@ public class Rational
             new_dem = s.numerator * l_c;
         }
         Rational x = new Rational(new_num, new_dem);
-        return x;
+        return Rational.simplify(x);
     }
     
     public static Rational multiply(Rational r, Rational s)
@@ -95,7 +95,7 @@ public class Rational
         int new_num = r.numerator * s.numerator;
         int new_dem = r.denominator * s.denominator;
         Rational x = new Rational(new_num, new_dem);
-        return x;
+        return Rational.simplify(x);
     }
     
     public static Rational divide(Rational r, Rational s)
@@ -103,7 +103,7 @@ public class Rational
         int new_num = r.numerator * s.denominator;
         int new_dem = r.denominator * s.numerator;
         Rational x = new Rational(new_num, new_dem);
-        return x;
+        return Rational.simplify(x);
     }
 
     public boolean isNegative()
