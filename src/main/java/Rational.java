@@ -127,6 +127,13 @@ public class Rational
             return false;
         }
     }
+    //Stuff from classwork
+    public boolean isSimplified(Rational r){
+        return false;
+    }
+    public Rational calculateDecimalValue(){
+        return null;
+    }
 
     public Rational reciprocal(){
         Rational recip = new Rational(this.denominator, this.numerator);
