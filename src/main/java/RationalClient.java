@@ -1,7 +1,7 @@
 public class RationalClient {
     
     public static void main(String[] args) {
-        Rational r = new Rational(3, 6);
+        Rational r = new Rational(1, 2);
         System.out.println(r);
         Rational a = new Rational(2, 4);
         System.out.println(a);
@@ -19,5 +19,9 @@ public class RationalClient {
         System.out.println("Negative: " + r.isNegative());
         System.out.println("Recip: " + r.reciprocal());
         System.out.println("Equals: " + r.equals(a));
+        System.out.println("Decimal: " + r.calculateDecimalValue());
+        System.out.println("Pow: " + r.pow(3));
+        System.out.println("Simplified?: " + r.isSimplified());
+        System.out.println("Matches?: " + r.matches(1));
     }
 }
